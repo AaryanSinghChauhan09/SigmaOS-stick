@@ -1,0 +1,17 @@
+[package]
+name = "sigmaos-stick"
+version = "0.1.0"
+edition = "2021"
+authors = ["SigmaOS Project"]
+description = "USB image writer and formatter"
+license = "GPL-3.0-or-later"
+repository = "https://github.com/AaryanSinghChauhan09/SigmaOS-stick"
+readme = "README.md"
+keywords = ["usb", "image", "writer"]
+categories = ["os"]
+
+[dependencies]
+sigmaos-kernel = { version = "0.1", path = "../SigmaOS-kernel" }
+
+[profile.release]
+opt-level = 3
