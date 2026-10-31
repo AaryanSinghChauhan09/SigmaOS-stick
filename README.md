@@ -1,15 +1,17 @@
-# SigmaOS-stick
+# SigmaOS Stick
 
-Part of the SigmaOS multi-repository architecture.
+This crate exports the `StickManager` API from its Mintstick module. The
+current manager returns hard-coded USB device examples, records write/format
+requests in memory, and returns a placeholder checksum. It does not enumerate
+devices, write an image, format a disk, or calculate a real checksum.
 
-## Principles
-- MODULARITY: Single responsibility per repository
-- LOOSE COUPLING: Minimal dependencies between repos
-- INTERFACE SEGREGATION: Clear, focused public APIs
-- DETERMINISTIC TESTING: Comprehensive test coverage
+Do not treat a successful request result as evidence that a block device was
+changed. Hardware discovery, privileged write safeguards, cancellation of an
+in-flight operation, and checksum verification need implementation and direct
+device or isolated-image evidence.
+
+The crate depends on the sibling `SigmaOS-kernel` checkout through a local path.
 
 ## License
-SPDX-License-Identifier: GPL-3.0-or-later
 
-## Copyright
-Copyright (C) 2026 SigmaOS Project
+GPL-3.0-or-later. See [`LICENSE`](LICENSE) and [`Cargo.toml`](Cargo.toml).
