@@ -1,0 +1,6 @@
+[component]
+name = "SigmaOS-stick"
+tier = 4
+description = "Bootable USB disk writer, image flasher, and ISO verifier inspired by Mintstick"
+contracts = ['usb-flasher', 'iso-writer-engine', 'sha256-media-verifier']
+upstream_inspirations = ['https://github.com/linuxmint/mintstick']
